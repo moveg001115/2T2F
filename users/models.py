@@ -11,6 +11,9 @@ class User(AbstractUser):
         CLIENT = ("client", "Client")
         PRODUCER = ("producer", "Producer")
 
+    avatar = models.ImageField(
+        blank=True,
+    )
     password = models.CharField(
         max_length=200,
     )

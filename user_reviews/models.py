@@ -8,7 +8,6 @@ class UserReview(Common):
         on_delete=models.CASCADE,
     )
 
-    image = models.ForeignKey(
-        "photos.Photo",
-        on_delete=models.SET_NULL,
+    image = models.ImageField(
+        blank=True,
     )
