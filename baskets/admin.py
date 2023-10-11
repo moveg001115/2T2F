@@ -4,4 +4,5 @@ from .models import Basket
 
 @admin.register(Basket)
 class BasketAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("owner",)
+    list_filter = ("owner",)

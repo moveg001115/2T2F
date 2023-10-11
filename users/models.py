@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
+    """User Model Definition"""
+
     class GenderChoices(models.TextChoices):
         MALE = ("male", "Male")
         FEMALE = ("female", "Female")
@@ -11,8 +13,17 @@ class User(AbstractUser):
         CLIENT = ("client", "Client")
         PRODUCER = ("producer", "Producer")
 
+    first_name = models.CharField(
+        max_length=150,
+        editable=False,
+    )
+    last_name = models.CharField(
+        max_length=150,
+        editable=False,
+    )
     avatar = models.ImageField(
         blank=True,
+        null=True,
     )
     password = models.CharField(
         max_length=200,
@@ -30,7 +41,11 @@ class User(AbstractUser):
         max_length=6,
         choices=GenderChoices.choices,
     )
-    phone_num = models.PositiveBigIntegerField(null=True, blank=True)
+    phone_num = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True,
+    )
     user_kind = models.CharField(
         max_length=8,
         choices=UserKindChoices.choices,

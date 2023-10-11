@@ -2,5 +2,6 @@ from django.apps import AppConfig
 
 
 class ProductCategoriesConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'product_categories'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "product_categories"
+    verbose_name = "product categories"

@@ -1,6 +1,6 @@
 from django.db import models
 
-""" Commom Model Definition"""
+""" Common Model Definition"""
 
 
 class Common(models.Model):

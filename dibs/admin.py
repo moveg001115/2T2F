@@ -4,4 +4,5 @@ from .models import Dib
 
 @admin.register(Dib)
 class DibAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("owner",)
+    list_filter = ("owner",)

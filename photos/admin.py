@@ -4,4 +4,5 @@ from .models import Photo
 
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("created_at",)
+    list_filter = ("created_at",)

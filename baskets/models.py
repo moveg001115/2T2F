@@ -10,4 +10,8 @@ class Basket(Common):
 
     products = models.ManyToManyField(
         "products.Product",
+        blank=True,
     )
+
+    def __str__(self) -> str:
+        return f"{self.owner}'s basket including {self.products}"
